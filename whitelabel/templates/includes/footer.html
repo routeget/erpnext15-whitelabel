@@ -1,0 +1,6 @@
+<div class="footer">
+    &copy; {{ frappe.utils.get_datetime().year }} Radius ERP. All Rights Reserved.
+    {% if footer_address %}
+    <div class="footer-address">{{ footer_address }}</div>
+    {% endif %}
+</div>
