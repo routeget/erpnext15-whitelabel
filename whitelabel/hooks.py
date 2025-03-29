@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from . import __version__ as app_version
 
 app_name = "whitelabel"
@@ -8,6 +10,7 @@ app_icon = "octicon octicon-versions"
 app_color = "grey"
 app_email = "info@radiuserp.com"
 app_license = "MIT"
+app_logo_url = '/assets/whitelabel/images/applogo.svg'
 
 # Include JS/CSS in assets
 app_include_css = "assets/css/whitelabel.bundle.css"
@@ -18,6 +21,9 @@ web_include_js = ["assets/js/whitelabel.js"]
 web_include_css = ["assets/css/whitelabel.css"]
 
 # Override templates and classes
+override_whitelisted_methods = {
+	"frappe.utils.change_log.show_update_popup": "whitelabel.api.ignore_update_popup"
+}
 override_doctype_class = {
     "Login Page": "whitelabel.overrides.login_page.CustomLoginPage"
 }
